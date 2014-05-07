@@ -7,13 +7,14 @@ import java.util.TreeMap;
 
 import edu.ycp.cs.cs496.locations.controllers.User;
 import edu.ycp.cs.cs496.locations.model.Cab;
+import edu.ycp.cs.cs496.locations.model.Friend;
 import edu.ycp.cs.cs496.locations.model.Location;
 
 public class FakeDatabase  implements IDatabase{
 	private List<Location> locations;
 	private List<Cab> cabs;
 	//Users
-	//People
+	private List<Friend> friends;
 	
 	private Map<Integer, User> userMap; // map of user ids to users
 	private List <User> userList;
@@ -26,7 +27,8 @@ public class FakeDatabase  implements IDatabase{
 		//Sample Locations
 		locations.add(new Location("BarName", "Bar", "123 Street", "York", "PA", "17403", "717-123-1234"));
 		locations.add(new Location("Pizza", "Food", "456 Street", "York", "PA", "17403", "717-987-9876"));
-		cabs.add(new Cab("Cab Service", "717-789-7894", "Only excepts Cash"));
+		cabs.add(new Cab("CabService", "717-789-7894", "Only excepts Cash"));
+		friends.add(new Friend("Sally", "717-789-7894", 'n', 'y'));
 	
 		User user = new User();
 		user.setId(-1);
@@ -88,6 +90,16 @@ public class FakeDatabase  implements IDatabase{
 			}
 		}
 		return typeList;
+	}
+
+	@Override
+	public Friend getFriend(String friendName) {
+		for (Friend friend : friends){
+			if(friend.getName().equals(friendName)){
+				return new Friend(friend.getName(), friend.getPhonenumber(), friend.getIsUser(), friend.getIsAvail());
+			}
+		}
+		return null;
 	}
 }
 
