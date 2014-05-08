@@ -5,7 +5,7 @@ import java.util.Map;
 
 import edu.ycp.cs.cs496.locations.controllers.User;
 import edu.ycp.cs.cs496.locations.model.Cab;
-import edu.ycp.cs.cs496.locations.model.Friend;
+import edu.ycp.cs.cs496.locations.model.SoberFriend;
 import edu.ycp.cs.cs496.locations.model.Location;
 
 public interface IDatabase {
@@ -19,5 +19,7 @@ public interface IDatabase {
 		
 		public Cab getCab(String cabName);
 		public List<Cab> getCab();
-		public Friend getFriend(String friendName);	
+		
+		public SoberFriend getSoberFriend(String friendName);	
+		public List<SoberFriend> getSoberFriend();
 }

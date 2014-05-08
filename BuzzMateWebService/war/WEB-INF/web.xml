@@ -9,9 +9,15 @@
 		<servlet-name>LocationList</servlet-name>
 		<servlet-class>edu.ycp.cs.cs496.locations.servlets.LocationList</servlet-class>
 	</servlet>
-		<servlet>
+	
+	<servlet>
 		<servlet-name>CabList</servlet-name>
 		<servlet-class>edu.ycp.cs.cs496.locations.servlets.CabList</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>myFriendsList</servlet-name>
+		<servlet-class>edu.ycp.cs.cs496.locations.servlets.myFriendsList</servlet-class>
 	</servlet>
 	
 	<!-- Servlet mappings (mapping of paths to servlets). -->
@@ -19,9 +25,15 @@
 		<servlet-name>LocationList</servlet-name>
 		<url-pattern>/Locations/*</url-pattern>
 	</servlet-mapping>
-		<servlet-mapping>
+	
+	<servlet-mapping>
 		<servlet-name>CabList</servlet-name>
 		<url-pattern>/Cabs/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>myFriendsList</servlet-name>
+		<url-pattern>/SoberFriends/*</url-pattern>
 	</servlet-mapping>
 
 </web-app>

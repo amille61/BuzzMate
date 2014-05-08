@@ -108,6 +108,7 @@ public class MobileApplicationClient extends Activity {
         Button foodButton = (Button) findViewById(R.id.foodButton);
         Button drunkTestButton = (Button) findViewById(R.id.drunkTest);
         Button cabButton = (Button) findViewById(R.id.cab_button);
+        Button friendButton = (Button) findViewById(R.id.soberButton);
         
         
         // TODO: Set onClickListeners for buttons
@@ -146,6 +147,21 @@ public class MobileApplicationClient extends Activity {
 				// TODO Auto-generated method stub
 				try {
 					Intent intent = new Intent(MobileApplicationClient.this, DrunkTest.class);
+					startActivity(intent);
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		});
+       
+       friendButton.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				try {
+					Intent intent = new Intent(MobileApplicationClient.this, MySoberFriends.class);
 					startActivity(intent);
 				} catch (Exception e) {
 					// TODO Auto-generated catch block

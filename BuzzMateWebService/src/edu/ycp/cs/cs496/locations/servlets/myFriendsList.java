@@ -8,17 +8,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import edu.ycp.cs.cs496.locations.controllers.GetFriendByName;
+import edu.ycp.cs.cs496.locations.controllers.GetSoberFriendByName;
+import edu.ycp.cs.cs496.locations.controllers.GetSoberFriendList;
 import edu.ycp.cs.cs496.locations.controllers.GetLocationByName;
 import edu.ycp.cs.cs496.locations.controllers.GetLocationList;
 import edu.ycp.cs.cs496.locations.controllers.GetLocationsByType;
-import edu.ycp.cs.cs496.locations.model.Friend;
+import edu.ycp.cs.cs496.locations.model.SoberFriend;
 import edu.ycp.cs.cs496.locations.model.Location;
 import edu.ycp.cs.cs496.locations.model.json.JSON;
 
 public class myFriendsList extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
@@ -26,14 +25,14 @@ public class myFriendsList extends HttpServlet {
 
 		String pathInfo = req.getPathInfo();
 		if(pathInfo == null || pathInfo.equals("") || pathInfo.equals("/")){
-			GetLocationList controller = new GetLocationList();
-			List<Location> locations = controller.getLocationList();
+			GetSoberFriendList controller = new GetSoberFriendList();
+			List<SoberFriend> friends = controller.getFriendList();
 			
 			resp.setStatus(HttpServletResponse.SC_OK);
 			resp.setContentType("application/json");
 			
 			// Return the item in JSON format
-			JSON.getObjectMapper().writeValue(resp.getWriter(), locations);
+			JSON.getObjectMapper().writeValue(resp.getWriter(), friends);
 			
 			return;			
 		}
@@ -43,8 +42,8 @@ public class myFriendsList extends HttpServlet {
 					pathInfo = pathInfo.substring(1);
 				}
 
-				GetFriendByName controller = new GetFriendByName();
-				Friend friend = controller.getFriend(pathInfo);
+				GetSoberFriendByName controller = new GetSoberFriendByName();
+				SoberFriend friend = controller.getFriend(pathInfo);
 				
 				if (friend == null) {
 					// No such item, so return a NOT FOUND response
