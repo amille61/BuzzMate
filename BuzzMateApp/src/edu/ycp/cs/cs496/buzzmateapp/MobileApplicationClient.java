@@ -26,6 +26,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -104,10 +105,13 @@ public class MobileApplicationClient extends Activity {
         // TODO: Obtain references to widgets
         //Button showButton = (Button) findViewById(R.id.showButton);   
         Button getButton = (Button) findViewById(R.id.getButton);
-        Button barButton = (Button) findViewById(R.id.barButton);
-        Button foodButton = (Button) findViewById(R.id.foodButton);
+        ImageButton barButton = (ImageButton) findViewById(R.id.barButton);
+        ImageButton foodButton = (ImageButton) findViewById(R.id.foodButton);
+        ImageButton settingsButton = (ImageButton) findViewById(R.id.settingsButton);
+        ImageButton cabButton = (ImageButton) findViewById(R.id.cab_button);
+        ImageButton soberButton = (ImageButton) findViewById(R.id.soberButton);
+        ImageButton checkInButton = (ImageButton) findViewById(R.id.checkin_button);
         Button drunkTestButton = (Button) findViewById(R.id.drunkTest);
-        Button cabButton = (Button) findViewById(R.id.cab_button);
         Button friendButton = (Button) findViewById(R.id.soberButton);
         
         
