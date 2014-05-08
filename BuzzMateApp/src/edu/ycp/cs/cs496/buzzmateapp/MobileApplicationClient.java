@@ -112,7 +112,7 @@ public class MobileApplicationClient extends Activity {
         ImageButton soberButton = (ImageButton) findViewById(R.id.soberButton);
         ImageButton checkInButton = (ImageButton) findViewById(R.id.checkin_button);
         Button drunkTestButton = (Button) findViewById(R.id.drunkTest);
-        Button friendButton = (Button) findViewById(R.id.soberButton);
+        Button friendButton = (Button) findViewById(R.id.friends_button);
         
         
         // TODO: Set onClickListeners for buttons

@@ -77,6 +77,8 @@ public class MySoberFriends extends Activity{
 				
 			});
 			
+			this.addContentView(lv, null);
+			
 			
 		} else {
 			Toast.makeText(MySoberFriends.this, "No Sober Friends Found!", Toast.LENGTH_SHORT).show();
