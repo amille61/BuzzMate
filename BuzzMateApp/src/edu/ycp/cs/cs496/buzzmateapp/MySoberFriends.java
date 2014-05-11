@@ -71,8 +71,7 @@ public class MySoberFriends extends Activity{
 				@Override
 				public void onItemClick(AdapterView<?> parent, View view,
 						int position, long id) {
-					// TODO Auto-generated method stub
-
+					// Sober Buddy Information
 				}
 				
 			});
